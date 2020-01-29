@@ -1,3 +1,5 @@
+# this file can convert .wav files to spectograms. But there is still much to do here
+
 import matplotlib.pyplot as plt
 from scipy import signal
 from scipy.io import wavfile
