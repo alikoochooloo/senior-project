@@ -1,0 +1,8 @@
+kivy
+keras
+sounddevice
+soundfile
+scipy
+librosa
+numpy
+pandas
