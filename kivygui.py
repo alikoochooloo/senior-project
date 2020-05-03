@@ -109,17 +109,16 @@ def extract_features(file_name):
 def model(data):
 
     model = Sequential()
-    model.add(Conv1D(filters=16, kernel_size=2, input_shape=(40, 1), activation='relu'))
+    model.add(Conv1D(filters=16, kernel_size=2, padding='same', input_shape=(40, 1), activation='relu'))
     model.add(MaxPooling1D(pool_size=2))
 
-    model.add(Conv1D(filters=32, kernel_size=2, activation='relu'))
+    model.add(Conv1D(filters=16, kernel_size=2, padding='same', activation='relu'))
     model.add(MaxPooling1D(pool_size=2))
 
-    model.add(Conv1D(filters=64, kernel_size=2, activation='relu'))
+    model.add(Conv1D(filters=16, kernel_size=2, padding='same', activation='relu'))
     model.add(MaxPooling1D(pool_size=2))
 
-    model.add(Conv1D(filters=128, kernel_size=2, activation='relu'))
-    model.add(MaxPooling1D(pool_size=2))
+    model.add(Conv1D(filters=16, kernel_size=2, padding='same', activation='relu'))
     model.add(GlobalAveragePooling1D())
 
     model.add(Dense(3, activation='softmax'))
